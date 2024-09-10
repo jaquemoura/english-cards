@@ -6,7 +6,7 @@
 
         <div v-if="show">
           <div>
-            <div v-if="answer === lista[id].valores[contador].ingles">
+            <div v-if="answer.toLowerCase() === lista[id].valores[contador].ingles.toLowerCase()">
               <p>resposta certa</p>
             </div>
             <div v-else>

@@ -5,8 +5,8 @@
 
       <div v-if="show">
         <div>
-          <div v-if="answer === arrayWrong[contador].ingles">
-            <p>resposta certa</p>
+          <div v-if="answer.toLowerCase() === arrayWrong[contador].ingles.toLowerCase()">
+            <p>resposta certa </p>
           </div>
           <div v-else>
             <p>{{arrayWrong[contador].ingles}}</p>
