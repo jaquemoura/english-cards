@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <header class="header">
+    <header class="header" :style="{width: screenWidth + 'px' }">
       <router-link to="/" class="logo"><h1>english cards</h1></router-link>
     </header>
     <div class="home">
@@ -12,7 +12,12 @@
 <script>
 
 export default {
-  name: 'App'
+  name: 'App',
+  data() {
+    return {
+      screenWidth: window.innerWidth - 90
+    }
+  }
 }
 </script>
 
@@ -23,7 +28,10 @@ export default {
   margin: 0;
   padding: 0;
 }
-
+.header{
+  max-width: 1200px;
+  width: 100%;
+}
  body {
   background: #f6f7fb;
   font-family: hurme_no2-webfont,-apple-system,BlinkMacSystemFont,sans-serif;
@@ -67,6 +75,8 @@ export default {
 @media(max-width: 1023px){
   .page{
     padding: 15px;
+    width: 100%;
+    max-width: 100%;
   }
   h1{
     font-size: 25px;
@@ -76,6 +86,11 @@ export default {
   }
   .lista-titulo {
     text-align: center;
+  }
+}
+@media(min-width: 1250px){
+  .page{
+    width: 1250px;
   }
 }
 </style>
